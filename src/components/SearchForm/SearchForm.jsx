@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 export default function SearchForm() {
   return (
     <form style={styles.SearchForm}>
-      <TextInput />
+      <TextInput placeholder='Search...' />
       <Button>
         <span className='fa fa-search' />
       </Button>
