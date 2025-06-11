@@ -1,4 +1,4 @@
 import styles from './Card.module.scss';
-export default function Card({ card }) {
-  return <li className={styles.card}>{card.title}</li>;
+export default function Card({ title }) {
+  return <li className={styles.card}>{title}</li>;
 }
