@@ -20,13 +20,22 @@ const cardsSlice = createSlice({
     },
   },
 });
+const stringSearch = createSlice({
+  name: 'search',
+  initialState: initialState.search,
+  reducers: {
+    addSearch: (state, action) => action.payload,
+  },
+});
 export const { addColumn } = columnSlice.actions;
 export const { addCard } = cardsSlice.actions;
+export const { addSearch } = stringSearch.actions;
 
 const store = configureStore({
   reducer: {
     columns: columnSlice.reducer,
     cards: cardsSlice.reducer,
+    search: stringSearch.reducer,
   },
 });
 export default store;
