@@ -2,13 +2,24 @@ import styles from './ColumnForm.module.scss';
 import { useState } from 'react';
 import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
+import { useDispatch } from 'react-redux';
+import { addColumn } from '../../redux/store';
+import shortid from 'shortid';
 
-export default function ColumnForm({ action }) {
+export default function ColumnForm() {
+  const dispatch = useDispatch();
+
   const [title, setTitle] = useState('');
   const [icon, setIcon] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    action({ title: title, icon: icon, });
+    const newColumn = {
+      id: shortid(),
+      title,
+      icon,
+    };
+    dispatch(addColumn(newColumn));
     setTitle('');
     setIcon('');
   };
