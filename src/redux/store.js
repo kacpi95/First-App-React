@@ -1,5 +1,15 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 import initialState from './initialState';
+import { strContains } from '../utils/strContains';
+
+export const getFilteredCards = ({ cards, search }, columnId) =>
+  cards.filter(
+    (card) => card.columnId === columnId && strContains(card.title, search)
+  );
+
+export const getAllColumns = (state) => {
+  return state.columns;
+};
 
 const columnSlice = createSlice({
   name: 'columns',
