@@ -6,15 +6,20 @@ import NavBar from './components/NavBar/NavBar';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Favorite from './components/Favorite/Favorite';
+import { Routes, Route } from 'react-router-dom';
+import NoPage from './components/NoPage/NoPage';
 
 function App() {
   return (
     <>
       <NavBar />
       <Container>
-        <Home />
-        <About />
-        <Favorite />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/favorite' element={<Favorite />} />
+          <Route path='*' element={<NoPage />} />
+        </Routes>
       </Container>
     </>
   );
