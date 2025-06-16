@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addCard } from '../../redux/store';
 import shortid from 'shortid';
 
-export default function CardForm({ columnId, }) {
+export default function CardForm({ columnId }) {
   const dispatch = useDispatch();
 
   const [card, setCard] = useState('');

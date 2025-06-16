@@ -5,14 +5,18 @@ import './styles/normalize.scss';
 import './styles/global.scss';
 import 'font-awesome/css/font-awesome.min.css';
 import Container from './components/Container/Container';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
   return (
-    <Container>
-      <Hero />
-      <SearchForm />
-      <List />
-    </Container>
+    <>
+      <NavBar />
+      <Container>
+        <Hero />
+        <SearchForm />
+        <List />
+      </Container>
+    </>
   );
 }
 export default App;
