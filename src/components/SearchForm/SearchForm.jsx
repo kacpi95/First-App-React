@@ -15,7 +15,7 @@ export default function SearchForm() {
   };
 
   return (
-    <form className={styles.SearchForm} onSubmit={handleClick}>
+    <form className={styles.searchForm} onSubmit={handleClick}>
       <TextInput
         placeholder='Search...'
         value={searchValue}
