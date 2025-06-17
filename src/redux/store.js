@@ -16,6 +16,9 @@ export const getListById = (state) => {
 export const getColumnsByList = (state, listId) => {
   return state.columns.filter((column) => column.listId === listId);
 };
+export const getAllLists = (state) => {
+  return state.lists;
+};
 
 const columnSlice = createSlice({
   name: 'columns',
