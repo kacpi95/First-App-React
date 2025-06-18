@@ -19,6 +19,9 @@ export const getColumnsByList = (state, listId) => {
 export const getAllLists = (state) => {
   return state.lists;
 };
+export const getFavoriteCards = (state) => {
+  return state.cards.filter((card) => card.isFavorite);
+};
 
 const columnSlice = createSlice({
   name: 'columns',
@@ -36,6 +39,12 @@ const cardsSlice = createSlice({
   reducers: {
     addCard: (state, action) => {
       state.push(action.payload);
+    },
+    toggleFavorite: (state, action) => {
+      const card = state.find((card) => card.id === action.payload);
+      if (card) {
+        card.isFavorite = !card.isFavorite;
+      }
     },
   },
 });
@@ -60,6 +69,7 @@ export const { addColumn } = columnSlice.actions;
 export const { addCard } = cardsSlice.actions;
 export const { addSearch } = stringSearch.actions;
 export const { addList } = listsSlice.actions;
+export const { toggleFavorite } = cardsSlice.actions;
 
 const store = configureStore({
   reducer: {

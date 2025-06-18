@@ -16,6 +16,7 @@ export default function CardForm({ columnId }) {
       id: shortid(),
       columnId,
       title: card,
+      isFavorite: false,
     };
     dispatch(addCard(newCard));
     setCard('');

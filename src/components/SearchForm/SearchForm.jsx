@@ -11,8 +11,8 @@ export default function SearchForm() {
 
   useEffect(() => {
     dispatch(addSearch(''));
-  }, []);
-  
+  }, [dispatch]);
+
   const handleClick = (e) => {
     e.preventDefault();
     dispatch(addSearch(searchValue));
