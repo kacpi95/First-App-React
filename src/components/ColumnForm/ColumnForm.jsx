@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { addColumn } from '../../redux/store';
 import shortid from 'shortid';
 
-export default function ColumnForm() {
+export default function ColumnForm({ listId }) {
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState('');
@@ -18,6 +18,7 @@ export default function ColumnForm() {
       id: shortid(),
       title,
       icon,
+      listId,
     };
     dispatch(addColumn(newColumn));
     setTitle('');

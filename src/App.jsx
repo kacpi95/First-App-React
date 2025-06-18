@@ -8,6 +8,7 @@ import About from './components/About/About';
 import Favorite from './components/Favorite/Favorite';
 import { Routes, Route } from 'react-router-dom';
 import NoPage from './components/NoPage/NoPage';
+import List from './components/List/List';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/favorite' element={<Favorite />} />
+          <Route path='/list/:listId' element={<List />} />
           <Route path='*' element={<NoPage />} />
         </Routes>
       </Container>

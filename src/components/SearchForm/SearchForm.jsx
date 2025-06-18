@@ -3,12 +3,16 @@ import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { addSearch } from '../../redux/store';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function SearchForm() {
   const [searchValue, setSearchValue] = useState('');
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(addSearch(''));
+  }, []);
+  
   const handleClick = (e) => {
     e.preventDefault();
     dispatch(addSearch(searchValue));

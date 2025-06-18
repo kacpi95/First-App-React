@@ -10,8 +10,8 @@ export const getFilteredCards = ({ cards, search }, columnId) =>
 export const getAllColumns = (state) => {
   return state.columns;
 };
-export const getListById = (state) => {
-  return state.lists.find((list) => list.id === 1);
+export const getListById = (state, listId) => {
+  return state.lists.find((list) => list.id === listId);
 };
 export const getColumnsByList = (state, listId) => {
   return state.columns.filter((column) => column.listId === listId);
@@ -49,11 +49,17 @@ const stringSearch = createSlice({
 const listsSlice = createSlice({
   name: 'lists',
   initialState: initialState.lists,
+  reducers: {
+    addList: (state, action) => {
+      state.push(action.payload);
+    },
+  },
 });
 
 export const { addColumn } = columnSlice.actions;
 export const { addCard } = cardsSlice.actions;
 export const { addSearch } = stringSearch.actions;
+export const { addList } = listsSlice.actions;
 
 const store = configureStore({
   reducer: {
