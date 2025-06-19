@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addList } from '../../redux/store';
+import { addList } from '../../redux/listsRedux';
 import TextInput from '../TextInput/TextInput';
 import { text } from '@fortawesome/fontawesome-svg-core';
 import { useState } from 'react';
