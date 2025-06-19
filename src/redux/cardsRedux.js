@@ -14,10 +14,13 @@ const cardsSlice = createSlice({
         card.isFavorite = !card.isFavorite;
       }
     },
+    removeCard: (state, action) => {
+      return state.filter((card) => card.id !== action.payload);
+    },
   },
 });
 
-export const { toggleFavorite, addCard } = cardsSlice.actions;
+export const { toggleFavorite, addCard, removeCard } = cardsSlice.actions;
 
 export const getFavoriteCards = (state) => {
   return state.cards.filter((card) => card.isFavorite);
